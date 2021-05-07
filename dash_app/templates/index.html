@@ -1,5 +1,53 @@
 {% extends "base.html" %}
 
+
+{% block tabela %}
+
+<div class="col">
+    <h1 class="title h6">Diagnostic Status</h1>
+    <table class="table caption-top">
+      <tbody>
+        <tr>
+          <th scope="row" >MDX</th>
+          <td style="background: rgb(4, 26, 124, 0.5);">75%</td>
+        </tr>
+        <tr>
+          <th scope="row">GDX</th>
+          <td style="background: rgb(112, 174, 255, 0.5);">20%</td>
+        </tr>
+        <tr>
+          <th scope="row" >Not in MDX/GDX</th>
+          <td style="background: rgb(199, 238, 238, 0.5);">5%</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <!--KPI2-->
+
+  <!--KPI9-->
+  <div class="col">
+    <h1 class="title h6">File used to decode</h1>
+    <table class="table caption-top">
+      <tbody>
+        <tr>
+          <th scope="row">MDX</th>
+          <td style="background: rgb(4, 26, 124, 0.5);">Mark</td>
+        </tr>
+        <tr>
+          <th scope="row">GDX</th>
+          <td style="background: rgb(112, 174, 255, 0.5);">Jacob</td>
+        </tr>
+        <tr>
+          <th scope="row" >Not in MDX/GDX</th>
+          <td style="background: rgb(199, 238, 238, 0.5);">Larry</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+{% endblock tabela %}
+
+
 {% block content %}
 <h1></h1>
 <script type="text/javascript">
