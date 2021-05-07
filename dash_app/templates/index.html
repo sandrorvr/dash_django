@@ -21,7 +21,7 @@
 
 
 
-    console.log(kpi5_obj)
+    console.log(kpi3_obj)
 
     const ctx = document.getElementById('kpi1');
     const myChart = new Chart(ctx, {
@@ -80,8 +80,8 @@
             datasets:
                 [
                     {
-                        label: 'Decode_File_Not_Found',
-                        data: kpi3_obj.Decode_File_Not_Found,
+                        label: 'Negative_Response',
+                        data: kpi3_obj.Negative_Response,
                         backgroundColor: [
                             kpi3_obj.color[0],
                         ],
@@ -91,8 +91,8 @@
                         borderWidth: 1
                     },
                     {
-                        label: 'Success',
-                        data: kpi3_obj.Success,
+                        label: 'Null_Response',
+                        data: kpi3_obj.Null_Response,
                         backgroundColor: [
                             kpi3_obj.color[1],
                         ],
@@ -102,8 +102,8 @@
                         borderWidth: 1
                     },
                     {
-                        label: 'Error_Parsing_Message',
-                        data: kpi3_obj.Error_Parsing_Message,
+                        label: 'Positive_Response',
+                        data: kpi3_obj.Positive_Response,
                         backgroundColor: [
                             kpi3_obj.color[2],
                         ],
@@ -112,7 +112,7 @@
                         ],
                         borderWidth: 1
                     },
-                    {
+                    /*{
                         label: 'Negative_Response',
                         data: kpi3_obj.Negative_Response,
                         backgroundColor: [
@@ -144,7 +144,7 @@
                             kpi3_obj.color[5],
                         ],
                         borderWidth: 1
-                    },
+                    },*/
 
                 ]
         },

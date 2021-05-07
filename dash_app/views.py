@@ -28,14 +28,14 @@ def fKPI1():
 
 def fKPI3():
     dic = {}
-    kpi2 = pd.crosstab(data.did_id, data.kpi2)
+    kpi1 = pd.crosstab(data.did_id, data.kpi1)
 
-    for col in kpi2.columns:
+    for col in kpi1.columns:
         key = '_'.join(col.split(' '))
-        dic[key] = list(kpi2.loc[:,col].values)
+        dic[key] = list(kpi1.loc[:,col].values)
     
-    dic['did'] = list(kpi2.index)
-    dic['color'] = generateColor(len(kpi2.columns))
+    dic['did'] = list(kpi1.index)
+    dic['color'] = generateColor(len(kpi1.columns))
     
     return dic
 
