@@ -11,7 +11,7 @@
 
 
 
-    console.log(kpi4_did_obj)
+    console.log(kpi7_did_obj)
 
     const ctx = document.getElementById('kpi1');
     const myChart = new Chart(ctx, {
@@ -380,20 +380,43 @@
     const myChart7_did = new Chart(ctx7_did, {
         type: 'bar',
         data: {
-            labels: ['Red', 'Blue'],
-            datasets: [{
-                label: '# of Votes',
-                data: [12, 19],
-                backgroundColor: [
-                    'rgba(255, 99, 132, 0.8)',
-                    'rgba(54, 162, 235, 0.8)',
-                ],
-                borderColor: [
-                    'rgba(255, 99, 132, 1)',
-                    'rgba(54, 162, 235, 1)'
-                ],
-                borderWidth: 1
-            }]
+            labels: kpi7_did_obj.did,
+            datasets: 
+            [
+                {
+                    label: 'Decoded',
+                    data: kpi7_did_obj.Decoded,
+                    backgroundColor: [
+                        kpi7_did_obj.color[0],
+                    ],
+                    borderColor: [
+                        kpi7_did_obj.color[0],
+                    ],
+                    borderWidth: 1
+                },
+                {
+                    label: 'Error_Message',
+                    data: kpi7_did_obj.Error_Message,
+                    backgroundColor: [
+                        kpi7_did_obj.color[1],
+                    ],
+                    borderColor: [
+                        kpi7_did_obj.color[1],
+                    ],
+                    borderWidth: 1
+                },
+                {
+                    label: 'Negative_Response',
+                    data: kpi7_did_obj.Negative_Response,
+                    backgroundColor: [
+                        kpi7_did_obj.color[2],
+                    ],
+                    borderColor: [
+                        kpi7_did_obj.color[2],
+                    ],
+                    borderWidth: 1
+                },
+            ]
         },
         options: {
             maintainAspectRatio: false,
