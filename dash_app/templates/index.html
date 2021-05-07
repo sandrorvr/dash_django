@@ -5,13 +5,17 @@
 <script type="text/javascript">
 
     const kpi3_obj = {{ kpi3| safe}}
+
     const kpi4_did_obj = {{ kpi4_did| safe}}
+    const kpi4_obj = {{ kpi4| safe}}
+
     const kpi7_did_obj = {{ kpi7_did| safe}}
+    const kpi7_obj = {{ kpi7| safe}}
 
 
 
 
-    console.log(kpi7_did_obj)
+    console.log(kpi7_obj)
 
     const ctx = document.getElementById('kpi1');
     const myChart = new Chart(ctx, {
@@ -154,17 +158,19 @@
     const myChart4 = new Chart(ctx4, {
         type: 'doughnut',
         data: {
-            labels: ['Red', 'Blue'],
+            labels: kpi4_obj.label,
             datasets: [{
-                label: '# of Votes',
-                data: [12, 19],
+                label: '',
+                data: kpi4_obj.values,
                 backgroundColor: [
-                    'rgba(255, 99, 132, 0.8)',
-                    'rgba(54, 162, 235, 0.8)',
+                    kpi4_obj.color[0],
+                    kpi4_obj.color[1],
+                    kpi4_obj.color[2],
                 ],
                 borderColor: [
-                    'rgba(255, 99, 132, 1)',
-                    'rgba(54, 162, 235, 1)'
+                    kpi4_obj.color[0],
+                    kpi4_obj.color[1],
+                    kpi4_obj.color[2],
                 ],
                 borderWidth: 1
             }]
@@ -334,20 +340,25 @@
     const myChart7 = new Chart(ctx7, {
         type: 'doughnut',
         data: {
-            labels: ['Red', 'Blue'],
-            datasets: [{
-                label: '# of Votes',
-                data: [12, 19],
-                backgroundColor: [
-                    'rgba(255, 99, 132, 0.8)',
-                    'rgba(54, 162, 235, 0.8)',
-                ],
-                borderColor: [
-                    'rgba(255, 99, 132, 1)',
-                    'rgba(54, 162, 235, 1)'
-                ],
-                borderWidth: 1
-            }]
+            labels: kpi7_obj.label,
+            datasets: 
+            [
+                {
+                    label: '',
+                    data: kpi7_obj.values,
+                    backgroundColor: [
+                        kpi7_obj.color[0],
+                        kpi7_obj.color[1],
+                        kpi7_obj.color[2],
+                    ],
+                    borderColor: [
+                        kpi7_obj.color[0],
+                        kpi7_obj.color[1],
+                        kpi7_obj.color[2],
+                    ],
+                    borderWidth: 1
+                }
+            ]
         },
         options: {
             maintainAspectRatio: false,
