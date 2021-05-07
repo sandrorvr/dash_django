@@ -13,6 +13,9 @@ def criarReferenciaTab(data):
             ref[data.columns[i]] = 'text'
         else:
             ref[data.columns[i]] = 'integer'
+
+    ref['id'] = 'integer'
+        
     return ref
 
 
@@ -33,7 +36,7 @@ def criarStringCREATE(ref, tableName):
 #print(criarStringCREATE(dicRef, 'DADOS'))
 
 
-def popularTab(data, tableName, values):
+def popularTab(data, tableName, values, index):
     string = f'INSERT INTO {tableName} VALUES ('
     
     for val in values:
@@ -41,6 +44,8 @@ def popularTab(data, tableName, values):
             string = string + f'\"{val}\",'
         else:
             string = string + f'{str(val)},'
+        
+    string = string + str(index) + ','
     
     string = list(string)
     string[-1] = ')'
@@ -55,13 +60,13 @@ def popularTab(data, tableName, values):
 
 dicRef = criarReferenciaTab(data)
 
-connection = sqlite3.connect('banco.db')
+connection = sqlite3.connect('db.sqlite3')
 c = connection.cursor()
 
 c.execute(criarStringCREATE(dicRef, 'DADOS'))
 
 for i in range(len(data)):
-    c.execute(popularTab(data, 'DADOS', data.iloc[i,:].values))
+    c.execute(popularTab(data, 'DADOS', data.iloc[i,:].values, i))
 
 connection.commit()
 connection.close()
