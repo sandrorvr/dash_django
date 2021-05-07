@@ -1,0 +1,45 @@
+
+body{
+    background-color: rgb(29, 32, 61);
+    color: rgb(255, 255, 255);
+}
+
+.board{
+    box-shadow: 3px 3px 2px 1px rgba(0, 0, 0, 0.2);
+    height: 150px;
+}
+
+.board-pie{
+    width: 250px;
+    height: 140px;
+}
+
+.board-pie-conj{
+    height: 200px;
+}
+
+.board-bar-conj{
+    box-shadow: 3px 3px 2px 1px rgba(0, 0, 0, 0.2);
+    height: 200px;
+}
+
+/*.board-table{
+    margin-top: 80px;
+}*/
+
+
+
+
+.title{
+    text-align: center;
+}
+
+td{
+    text-align: center;
+    color: rgb(255, 255, 255);
+}
+
+th{
+    width: 30px;
+    color: rgb(255, 255, 255);
+}
