@@ -17,6 +17,15 @@ def generateColor(n):
         color.append(f'rgba({r}, {g}, {b}, 1)')
     return color
 
+
+def fKPI1():
+    dic = {}
+    dic['values'] = list(data['kpi1'].value_counts().values)
+    dic['label'] = list(data['kpi1'].value_counts().index)
+    dic['color'] = generateColor(len(data['kpi1'].unique()))
+    return dic
+
+
 def fKPI3():
     dic = {}
     kpi2 = pd.crosstab(data.did_id, data.kpi2)
@@ -44,11 +53,34 @@ def fKPI4_did():
     return dic
 
 
+def fKPI5():
+    dic = {}
+    kpi5 = pd.crosstab(data.did_id, data.kpi5)
+
+    for col in kpi5.columns:
+        key = '_'.join(col.split(' '))
+        dic[key] = list(kpi5.loc[:,col].values)
+    
+    dic['did'] = list(kpi5.index)
+    dic['color'] = generateColor(len(kpi5.columns))
+    
+    return dic
+
+
 def fKPI4():
     dic = {}
     dic['values'] = list(data['kpi4'].value_counts().values)
     dic['label'] = list(data['kpi4'].value_counts().index)
     dic['color'] = generateColor(len(data['kpi4'].unique()))
+    return dic
+
+
+
+def fKPI6():
+    dic = {}
+    dic['values'] = list(data['kpi6'].value_counts().values)
+    dic['label'] = list(data['kpi6'].value_counts().index)
+    dic['color'] = generateColor(len(data['kpi6'].unique()))
     return dic
 
 
@@ -75,9 +107,12 @@ def fKPI7():
 
 def index(request):
 
+    context['kpi1'] = fKPI1()
     context['kpi3'] = fKPI3()
     context['kpi4_did'] = fKPI4_did()
     context['kpi4'] = fKPI4()
+    context['kpi5'] = fKPI5()
+    context['kpi6'] = fKPI6()
     context['kpi7_did'] = fKPI7_did()
     context['kpi7'] = fKPI7()
     
