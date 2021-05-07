@@ -1,6 +1,6 @@
 
 body{
-    background-color: rgb(29, 32, 61);
+    background-color: rgb(41, 47, 102);
     color: rgb(255, 255, 255);
 }
 
@@ -23,11 +23,6 @@ body{
     height: 200px;
 }
 
-/*.board-table{
-    margin-top: 80px;
-}*/
-
-
 
 
 .title{
@@ -37,6 +32,7 @@ body{
 td{
     text-align: center;
     color: rgb(255, 255, 255);
+    font-size: 5px;
 }
 
 th{

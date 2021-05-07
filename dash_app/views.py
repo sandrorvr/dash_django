@@ -26,6 +26,14 @@ def fKPI1():
     return dic
 
 
+def fKPI2():
+    dic = {}
+    dic['values'] = list(data['kpi2'].value_counts().values)
+    dic['label'] = list(data['kpi2'].value_counts().index)
+    dic['color'] = generateColor(len(data['kpi2'].unique()))
+    return dic
+
+
 def fKPI3():
     dic = {}
     kpi1 = pd.crosstab(data.did_id, data.kpi1)
@@ -108,6 +116,7 @@ def fKPI7():
 def index(request):
 
     context['kpi1'] = fKPI1()
+    context['kpi2'] = fKPI2()
     context['kpi3'] = fKPI3()
     context['kpi4_did'] = fKPI4_did()
     context['kpi4'] = fKPI4()

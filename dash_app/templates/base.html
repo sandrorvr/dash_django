@@ -41,11 +41,47 @@
         <div class="row mt-2" >
             <div class="col" >
                 <div class="row">
-
+                  <div class="col">
+                    <h1 class="title h6">Diagnostic Status</h1>
+                    <table class="table caption-top" style="font-size: 0.6rem;">
+                      <tbody>
+                        <tr>
+                          <th scope="row">Subfield Error</th>
+                          <td style="background: rgb(4, 26, 124, 0.5);">75%</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">Decode File Not Found</th>
+                          <td style="background: rgb(112, 174, 255, 0.5);">20%</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">Response Empty</th>
+                          <td style="background: rgb(199, 238, 238, 0.5);">5%</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
                   <!--KPI2-->
-                  {% block tabela %}{% endblock tabela%}
+                
                   <!--KPI9-->
-
+                  <div class="col" >
+                    <h1 class="title h6">File used to decode</h1>
+                    <table class="table caption-top" style="font-size: 0.6rem;">
+                      <tbody>
+                        <tr>
+                          <th scope="row">MDX</th>
+                          <td style="background: rgb(4, 26, 124, 0.5);">Mark</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">GDX</th>
+                          <td style="background: rgb(112, 174, 255, 0.5);">Jacob</td>
+                        </tr>
+                        <tr>
+                          <th scope="row" >Not in MDX/GDX</th>
+                          <td style="background: rgb(199, 238, 238, 0.5);">Larry</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
                 </div>
             </div>
             <div class="col" >
