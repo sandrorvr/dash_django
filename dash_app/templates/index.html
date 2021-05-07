@@ -3,9 +3,16 @@
 {% block content %}
 <h1></h1>
 <script type="text/javascript">
-    const color = {{color|safe}}
 
-    console.log({{kpi2|safe}})
+    const kpi3_obj = {{ kpi3| safe}}
+    const kpi4_did_obj = {{ kpi4_did| safe}}
+    const kpi7_did_obj = {{ kpi7_did| safe}}
+
+
+
+
+    console.log(kpi4_did_obj)
+
     const ctx = document.getElementById('kpi1');
     const myChart = new Chart(ctx, {
         type: 'doughnut',
@@ -48,83 +55,83 @@
         }
     });
 
-    
+
     const ctx3 = document.getElementById('kpi3');
     const myChart3 = new Chart(ctx3, {
         type: 'bar',
-        data: 
+        data:
         {
-            labels: {{did|safe}},
-            datasets: 
-            [
-                {
-                    label: 'Decode_File_Not_Found',
-                    data: {{Decode_File_Not_Found|safe}},
-                    backgroundColor: [
-                        color[0],
-                    ],
-                    borderColor: [
-                        color[0],
-                    ],
-                    borderWidth: 1
-                }, 
-                {
-                    label: 'Success',
-                    data: {{Success|safe}},
-                    backgroundColor: [
-                        color[1],
-                    ],
-                    borderColor: [
-                        color[1],
-                    ],
-                    borderWidth: 1
-                },
-                {
-                    label: 'Error_Parsing_Message',
-                    data: {{Error_Parsing_Message|safe}},
-                    backgroundColor: [
-                        color[2],
-                    ],
-                    borderColor: [
-                        color[2],
-                    ],
-                    borderWidth: 1
-                },
-                {
-                    label: 'Negative_Response',
-                    data: {{Negative_Response|safe}},
-                    backgroundColor: [
-                        color[3],
-                    ],
-                    borderColor: [
-                        color[3],
-                    ],
-                    borderWidth: 1
-                },
-                {
-                    label: 'Response_Empty',
-                    data: {{Response_Empty|safe}},
-                    backgroundColor: [
-                        color[4],
-                    ],
-                    borderColor: [
-                        color[4],
-                    ],
-                    borderWidth: 1
-                },
-                {
-                    label: 'Subfield_Error',
-                    data: {{Response_Empty|safe}},
-                    backgroundColor: [
-                        color[5],
-                    ],
-                    borderColor: [
-                        color[5],
-                    ],
-                    borderWidth: 1
-                },
-                
-            ]
+            labels: kpi3_obj.did,
+            datasets:
+                [
+                    {
+                        label: 'Decode_File_Not_Found',
+                        data: kpi3_obj.Decode_File_Not_Found,
+                        backgroundColor: [
+                            kpi3_obj.color[0],
+                        ],
+                        borderColor: [
+                            kpi3_obj.color[0],
+                        ],
+                        borderWidth: 1
+                    },
+                    {
+                        label: 'Success',
+                        data: kpi3_obj.Success,
+                        backgroundColor: [
+                            kpi3_obj.color[1],
+                        ],
+                        borderColor: [
+                            kpi3_obj.color[1],
+                        ],
+                        borderWidth: 1
+                    },
+                    {
+                        label: 'Error_Parsing_Message',
+                        data: kpi3_obj.Error_Parsing_Message,
+                        backgroundColor: [
+                            kpi3_obj.color[2],
+                        ],
+                        borderColor: [
+                            kpi3_obj.color[2],
+                        ],
+                        borderWidth: 1
+                    },
+                    {
+                        label: 'Negative_Response',
+                        data: kpi3_obj.Negative_Response,
+                        backgroundColor: [
+                            kpi3_obj.color[3],
+                        ],
+                        borderColor: [
+                            kpi3_obj.color[3],
+                        ],
+                        borderWidth: 1
+                    },
+                    {
+                        label: 'Response_Empty',
+                        data: kpi3_obj.Response_Empty,
+                        backgroundColor: [
+                            kpi3_obj.color[4],
+                        ],
+                        borderColor: [
+                            kpi3_obj.color[4],
+                        ],
+                        borderWidth: 1
+                    },
+                    {
+                        label: 'Subfield_Error',
+                        data: kpi3_obj.Response_Empty,
+                        backgroundColor: [
+                            kpi3_obj.color[5],
+                        ],
+                        borderColor: [
+                            kpi3_obj.color[5],
+                        ],
+                        borderWidth: 1
+                    },
+
+                ]
         },
         options: {
             maintainAspectRatio: false,
@@ -193,20 +200,43 @@
     const myChart4_did = new Chart(ctx4_did, {
         type: 'bar',
         data: {
-            labels: ['Red', 'Blue'],
-            datasets: [{
-                label: '# of Votes',
-                data: [12, 19],
-                backgroundColor: [
-                    'rgba(255, 99, 132, 0.8)',
-                    'rgba(54, 162, 235, 0.8)',
-                ],
-                borderColor: [
-                    'rgba(255, 99, 132, 1)',
-                    'rgba(54, 162, 235, 1)'
-                ],
-                borderWidth: 1
-            }]
+            labels: kpi4_did_obj.did,
+            datasets: 
+            [
+                {
+                    label: 'Byte_Size_Error',
+                    data: kpi4_did_obj.Byte_Size_Error,
+                    backgroundColor: [
+                        kpi4_did_obj.color[0],
+                    ],
+                    borderColor: [
+                        kpi4_did_obj.color[0],
+                    ],
+                    borderWidth: 1
+                },
+                {
+                    label: 'No_Byte_Size_Error',
+                    data: kpi4_did_obj.No_Byte_Size_Error,
+                    backgroundColor: [
+                        kpi4_did_obj.color[1],
+                    ],
+                    borderColor: [
+                        kpi4_did_obj.color[1],
+                    ],
+                    borderWidth: 1
+                },
+                {
+                    label: 'No_Error',
+                    data: kpi4_did_obj.No_Error,
+                    backgroundColor: [
+                        kpi4_did_obj.color[2],
+                    ],
+                    borderColor: [
+                        kpi4_did_obj.color[2],
+                    ],
+                    borderWidth: 1
+                },
+            ]
         },
         options: {
             maintainAspectRatio: false,

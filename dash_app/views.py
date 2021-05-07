@@ -6,6 +6,7 @@ import random
 
 data = pd.read_csv('./scriptAux/db.csv')
 
+context = {}
 
 def generateColor(n):
     color = []
@@ -16,7 +17,7 @@ def generateColor(n):
         color.append(f'rgba({r}, {g}, {b}, 1)')
     return color
 
-def fKPI2():
+def fKPI3():
     dic = {}
     kpi2 = pd.crosstab(data.did_id, data.kpi2)
 
@@ -29,10 +30,38 @@ def fKPI2():
     
     return dic
 
+def fKPI4_did():
+    dic = {}
+    kpi4 = pd.crosstab(data.did_id, data.kpi4)
+
+    for col in kpi4.columns:
+        key = '_'.join(col.split(' '))
+        dic[key] = list(kpi4.loc[:,col].values)
+    
+    dic['did'] = list(kpi4.index)
+    dic['color'] = generateColor(len(kpi4.columns))
+    
+    return dic
+
+
+
+def fKPI7_did():
+    dic = {}
+    kpi7 = pd.crosstab(data.did_id, data.kpi7)
+
+    for col in kpi7.columns:
+        key = '_'.join(col.split(' '))
+        dic[key] = list(kpi7.loc[:,col].values)
+    
+    dic['did'] = list(kpi7.index)
+    dic['color'] = generateColor(len(kpi7.columns))
+    
+    return dic
 
 def index(request):
 
-    context = fKPI2()
-    print(context)
+    context['kpi3'] = fKPI3()
+    context['kpi4_did'] = fKPI4_did()
+    context['kpi7_did'] = fKPI7_did()
     
     return render(request, 'index.html', context)
