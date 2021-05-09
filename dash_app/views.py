@@ -28,9 +28,16 @@ def fKPI1():
 
 def fKPI2():
     dic = {}
-    dic['values'] = list(data['kpi2'].value_counts().values)
-    dic['label'] = list(data['kpi2'].value_counts().index)
-    dic['color'] = generateColor(len(data['kpi2'].unique()))
+
+    label = data['kpi2'].value_counts().index
+    label = ['_'.join(i.split(' ')) for i in label]
+    values = data['kpi2'].value_counts().values
+    total = sum(values)
+    values = [(i/total)*100 for i in values]
+
+    for i in range(len(values)):
+        dic[label[i]] =values[i]
+    
     return dic
 
 
@@ -113,6 +120,26 @@ def fKPI7():
     dic['color'] = generateColor(len(data['kpi7'].unique()))
     return dic
 
+
+
+
+def fKPI9():
+    dic = {}
+
+    label = data['kpi9'].value_counts().index
+    label = ['_'.join(i.split(' ')) for i in label]
+    label = ['_'.join(i.split('/')) for i in label]
+    values = data['kpi9'].value_counts().values
+    total = sum(values)
+    values = [(i/total)*100 for i in values]
+
+    for i in range(len(values)):
+        dic[label[i]] =values[i]
+    
+    return dic
+
+
+
 def index(request):
 
     context['kpi1'] = fKPI1()
@@ -124,5 +151,6 @@ def index(request):
     context['kpi6'] = fKPI6()
     context['kpi7_did'] = fKPI7_did()
     context['kpi7'] = fKPI7()
+    context['kpi9'] = fKPI9()
     
     return render(request, 'index.html', context)
