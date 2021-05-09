@@ -1,6 +1,62 @@
 {% extends "base.html" %}
 
+{% block tabela%}
+<div class="col">
+    <div class="row">
+        <div class="col-8" >
+            <h1 class="title h6">Diagnostic Status</h1>
+            <table class="table caption-top">
+                <tbody>
+                    <tr>
+                        <td scope="row">Subfield Error</td>
+                        <td style="background: rgb(4, 26, 124, 0.5);">75%</td>
 
+                        <td scope="row">Decode File Not Found</td>
+                        <td style="background: rgb(112, 174, 255, 0.5);">20%</td>
+                    </tr>
+
+                    <tr>
+                        <td scope="row">Response Empty</td>
+                        <td style="background: rgb(199, 238, 238, 0.5);">5%</td>
+
+                        <td scope="row">Subfield Error</td>
+                        <td style="background: rgb(4, 26, 124, 0.5);">75%</td>
+                    </tr>
+                    <tr>
+                        <td scope="row">Decode File Not Found</td>
+                        <td style="background: rgb(112, 174, 255, 0.5);">20%</td>
+
+                        <td scope="row">Response Empty</td>
+                        <td style="background: rgb(199, 238, 238, 0.5);">5%</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <!--KPI2-->
+
+        <!--KPI9-->
+        <div class="col-4">
+            <h1 class="title h6">File used to decode</h1>
+            <table class="table caption-top">
+                <tbody>
+                    <tr>
+                        <td>MDX</td>
+                        <td style="background: rgb(4, 26, 124, 0.5);">Mark</td>
+                    </tr>
+                    <tr>
+                        <td>GDX</td>
+                        <td style="background: rgb(112, 174, 255, 0.5);">Jacob</td>
+                    </tr>
+                    <tr>
+                        <td>Not in MDX/GDX</td>
+                        <td style="background: rgb(199, 238, 238, 0.5);">Larry</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock tabela%}
 
 {% block content %}
 <h1></h1>
@@ -32,23 +88,23 @@
         type: 'doughnut',
         data: {
             labels: kpi1_obj.label,
-            datasets: 
-            [
-                {
-                    data: kpi1_obj.values,
-                    backgroundColor: [
-                        kpi1_obj.color[0],
-                        kpi1_obj.color[1],
-                        kpi1_obj.color[2],
-                    ],
-                    borderColor: [
-                        kpi1_obj.color[0],
-                        kpi1_obj.color[1],
-                        kpi1_obj.color[2],
-                    ],
-                    borderWidth: 1
-                }
-            ]
+            datasets:
+                [
+                    {
+                        data: kpi1_obj.values,
+                        backgroundColor: [
+                            kpi1_obj.color[0],
+                            kpi1_obj.color[1],
+                            kpi1_obj.color[2],
+                        ],
+                        borderColor: [
+                            kpi1_obj.color[0],
+                            kpi1_obj.color[1],
+                            kpi1_obj.color[2],
+                        ],
+                        borderWidth: 1
+                    }
+                ]
         },
         options: {
             maintainAspectRatio: false,
@@ -222,42 +278,42 @@
         type: 'bar',
         data: {
             labels: kpi4_did_obj.did,
-            datasets: 
-            [
-                {
-                    label: 'Byte_Size_Error',
-                    data: kpi4_did_obj.Byte_Size_Error,
-                    backgroundColor: [
-                        kpi4_did_obj.color[0],
-                    ],
-                    borderColor: [
-                        kpi4_did_obj.color[0],
-                    ],
-                    borderWidth: 1
-                },
-                {
-                    label: 'No_Byte_Size_Error',
-                    data: kpi4_did_obj.No_Byte_Size_Error,
-                    backgroundColor: [
-                        kpi4_did_obj.color[1],
-                    ],
-                    borderColor: [
-                        kpi4_did_obj.color[1],
-                    ],
-                    borderWidth: 1
-                },
-                {
-                    label: 'No_Error',
-                    data: kpi4_did_obj.No_Error,
-                    backgroundColor: [
-                        kpi4_did_obj.color[2],
-                    ],
-                    borderColor: [
-                        kpi4_did_obj.color[2],
-                    ],
-                    borderWidth: 1
-                },
-            ]
+            datasets:
+                [
+                    {
+                        label: 'Byte_Size_Error',
+                        data: kpi4_did_obj.Byte_Size_Error,
+                        backgroundColor: [
+                            kpi4_did_obj.color[0],
+                        ],
+                        borderColor: [
+                            kpi4_did_obj.color[0],
+                        ],
+                        borderWidth: 1
+                    },
+                    {
+                        label: 'No_Byte_Size_Error',
+                        data: kpi4_did_obj.No_Byte_Size_Error,
+                        backgroundColor: [
+                            kpi4_did_obj.color[1],
+                        ],
+                        borderColor: [
+                            kpi4_did_obj.color[1],
+                        ],
+                        borderWidth: 1
+                    },
+                    {
+                        label: 'No_Error',
+                        data: kpi4_did_obj.No_Error,
+                        backgroundColor: [
+                            kpi4_did_obj.color[2],
+                        ],
+                        borderColor: [
+                            kpi4_did_obj.color[2],
+                        ],
+                        borderWidth: 1
+                    },
+                ]
         },
         options: {
             maintainAspectRatio: false,
@@ -277,42 +333,42 @@
         type: 'bar',
         data: {
             labels: kpi5_obj.did,
-            datasets: 
-            [
-                {
-                    label: 'In_range',
-                    data: kpi5_obj.In_range,
-                    backgroundColor: [
-                        kpi5_obj.color[0],
-                    ],
-                    borderColor: [
-                        kpi5_obj.color[0],
-                    ],
-                    borderWidth: 1
-                },
-                {
-                    label: 'Min_Max_Not_Found',
-                    data: kpi5_obj.Min_Max_Not_Found,
-                    backgroundColor: [
-                        kpi5_obj.color[1],
-                    ],
-                    borderColor: [
-                        kpi5_obj.color[1],
-                    ],
-                    borderWidth: 1
-                },
-                {
-                    label: 'Not_applicable',
-                    data: kpi5_obj.Not_applicable,
-                    backgroundColor: [
-                        kpi5_obj.color[2],
-                    ],
-                    borderColor: [
-                        kpi5_obj.color[2],
-                    ],
-                    borderWidth: 1
-                },
-            ]
+            datasets:
+                [
+                    {
+                        label: 'In_range',
+                        data: kpi5_obj.In_range,
+                        backgroundColor: [
+                            kpi5_obj.color[0],
+                        ],
+                        borderColor: [
+                            kpi5_obj.color[0],
+                        ],
+                        borderWidth: 1
+                    },
+                    {
+                        label: 'Min_Max_Not_Found',
+                        data: kpi5_obj.Min_Max_Not_Found,
+                        backgroundColor: [
+                            kpi5_obj.color[1],
+                        ],
+                        borderColor: [
+                            kpi5_obj.color[1],
+                        ],
+                        borderWidth: 1
+                    },
+                    {
+                        label: 'Not_applicable',
+                        data: kpi5_obj.Not_applicable,
+                        backgroundColor: [
+                            kpi5_obj.color[2],
+                        ],
+                        borderColor: [
+                            kpi5_obj.color[2],
+                        ],
+                        borderWidth: 1
+                    },
+                ]
         },
         options: {
             maintainAspectRatio: false,
@@ -330,23 +386,23 @@
         type: 'doughnut',
         data: {
             labels: kpi6_obj.label,
-            datasets: 
-            [
-                {
-                    data: kpi6_obj.values,
-                    backgroundColor: [
-                        kpi6_obj.color[0],
-                        kpi6_obj.color[1],
-                        kpi6_obj.color[2],
-                    ],
-                    borderColor: [
-                        kpi6_obj.color[0],
-                        kpi6_obj.color[1],
-                        kpi6_obj.color[2],
-                    ],
-                    borderWidth: 1
-                }
-            ]
+            datasets:
+                [
+                    {
+                        data: kpi6_obj.values,
+                        backgroundColor: [
+                            kpi6_obj.color[0],
+                            kpi6_obj.color[1],
+                            kpi6_obj.color[2],
+                        ],
+                        borderColor: [
+                            kpi6_obj.color[0],
+                            kpi6_obj.color[1],
+                            kpi6_obj.color[2],
+                        ],
+                        borderWidth: 1
+                    }
+                ]
         },
         options: {
             maintainAspectRatio: false,
@@ -379,24 +435,24 @@
         type: 'doughnut',
         data: {
             labels: kpi7_obj.label,
-            datasets: 
-            [
-                {
-                    label: '',
-                    data: kpi7_obj.values,
-                    backgroundColor: [
-                        kpi7_obj.color[0],
-                        kpi7_obj.color[1],
-                        kpi7_obj.color[2],
-                    ],
-                    borderColor: [
-                        kpi7_obj.color[0],
-                        kpi7_obj.color[1],
-                        kpi7_obj.color[2],
-                    ],
-                    borderWidth: 1
-                }
-            ]
+            datasets:
+                [
+                    {
+                        label: '',
+                        data: kpi7_obj.values,
+                        backgroundColor: [
+                            kpi7_obj.color[0],
+                            kpi7_obj.color[1],
+                            kpi7_obj.color[2],
+                        ],
+                        borderColor: [
+                            kpi7_obj.color[0],
+                            kpi7_obj.color[1],
+                            kpi7_obj.color[2],
+                        ],
+                        borderWidth: 1
+                    }
+                ]
         },
         options: {
             maintainAspectRatio: false,
@@ -430,42 +486,42 @@
         type: 'bar',
         data: {
             labels: kpi7_did_obj.did,
-            datasets: 
-            [
-                {
-                    label: 'Decoded',
-                    data: kpi7_did_obj.Decoded,
-                    backgroundColor: [
-                        kpi7_did_obj.color[0],
-                    ],
-                    borderColor: [
-                        kpi7_did_obj.color[0],
-                    ],
-                    borderWidth: 1
-                },
-                {
-                    label: 'Error_Message',
-                    data: kpi7_did_obj.Error_Message,
-                    backgroundColor: [
-                        kpi7_did_obj.color[1],
-                    ],
-                    borderColor: [
-                        kpi7_did_obj.color[1],
-                    ],
-                    borderWidth: 1
-                },
-                {
-                    label: 'Negative_Response',
-                    data: kpi7_did_obj.Negative_Response,
-                    backgroundColor: [
-                        kpi7_did_obj.color[2],
-                    ],
-                    borderColor: [
-                        kpi7_did_obj.color[2],
-                    ],
-                    borderWidth: 1
-                },
-            ]
+            datasets:
+                [
+                    {
+                        label: 'Decoded',
+                        data: kpi7_did_obj.Decoded,
+                        backgroundColor: [
+                            kpi7_did_obj.color[0],
+                        ],
+                        borderColor: [
+                            kpi7_did_obj.color[0],
+                        ],
+                        borderWidth: 1
+                    },
+                    {
+                        label: 'Error_Message',
+                        data: kpi7_did_obj.Error_Message,
+                        backgroundColor: [
+                            kpi7_did_obj.color[1],
+                        ],
+                        borderColor: [
+                            kpi7_did_obj.color[1],
+                        ],
+                        borderWidth: 1
+                    },
+                    {
+                        label: 'Negative_Response',
+                        data: kpi7_did_obj.Negative_Response,
+                        backgroundColor: [
+                            kpi7_did_obj.color[2],
+                        ],
+                        borderColor: [
+                            kpi7_did_obj.color[2],
+                        ],
+                        borderWidth: 1
+                    },
+                ]
         },
         options: {
             maintainAspectRatio: false,

@@ -1,6 +1,6 @@
 
 body{
-    background-color: rgb(41, 47, 102);
+    background-color: rgb(53, 33, 88);
     color: rgb(255, 255, 255);
 }
 
@@ -31,11 +31,15 @@ body{
 
 td{
     text-align: center;
-    color: rgb(255, 255, 255);
-    font-size: 5px;
+    font-size: 0.7rem;
+    border: none;
+    color: white;
 }
 
-th{
-    width: 30px;
-    color: rgb(255, 255, 255);
+
+table{
+
+    height: 91%;
 }
+
+tr:nth-child(even) {background-color: rgb(60, 38, 97);}
