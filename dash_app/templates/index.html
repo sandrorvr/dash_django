@@ -84,12 +84,14 @@
     const kpi7_did_obj = {{ kpi7_did| safe}}
     const kpi7_obj = {{ kpi7| safe}}
 
+    const kpi8_obj = {{ kpi8| safe}}
+
     const kpi9_obj = {{ kpi9| safe}}
 
 
 
 
-    console.log(kpi9_obj)
+    console.log(kpi8_obj)
 
     const ctx = document.getElementById('kpi1');
     const myChart = new Chart(ctx, {
@@ -115,6 +117,11 @@
                 ]
         },
         options: {
+            plugins:{
+                legend:{
+                    display: false
+                }
+            },
             maintainAspectRatio: false,
             scales: {
                 y: {
@@ -180,39 +187,6 @@
                         ],
                         borderWidth: 1
                     },
-                    /*{
-                        label: 'Negative_Response',
-                        data: kpi3_obj.Negative_Response,
-                        backgroundColor: [
-                            kpi3_obj.color[3],
-                        ],
-                        borderColor: [
-                            kpi3_obj.color[3],
-                        ],
-                        borderWidth: 1
-                    },
-                    {
-                        label: 'Response_Empty',
-                        data: kpi3_obj.Response_Empty,
-                        backgroundColor: [
-                            kpi3_obj.color[4],
-                        ],
-                        borderColor: [
-                            kpi3_obj.color[4],
-                        ],
-                        borderWidth: 1
-                    },
-                    {
-                        label: 'Subfield_Error',
-                        data: kpi3_obj.Response_Empty,
-                        backgroundColor: [
-                            kpi3_obj.color[5],
-                        ],
-                        borderColor: [
-                            kpi3_obj.color[5],
-                        ],
-                        borderWidth: 1
-                    },*/
 
                 ]
         },
@@ -413,6 +387,11 @@
                 ]
         },
         options: {
+            plugins:{
+                legend:{
+                    display: false
+                }
+            },
             maintainAspectRatio: false,
             scales: {
                 y: {

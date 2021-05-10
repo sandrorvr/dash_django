@@ -121,6 +121,8 @@ def fKPI7():
     return dic
 
 
+def fKPI8():
+    return {'label': round((sum(data['countNull_N_expected'].values)/(len(data)*len(data.columns)))*100, 2)}
 
 
 def fKPI9():
@@ -151,6 +153,7 @@ def index(request):
     context['kpi6'] = fKPI6()
     context['kpi7_did'] = fKPI7_did()
     context['kpi7'] = fKPI7()
+    context['kpi8'] = fKPI8()
     context['kpi9'] = fKPI9()
     
     return render(request, 'index.html', context)
